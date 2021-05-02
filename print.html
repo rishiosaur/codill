@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Codill</title>
+        
+        <meta name="robots" content="noindex" />
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="favicon.png">
+        
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        
+        <link rel="stylesheet" href="css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="codill.html">The Codill book</a></li><li class="chapter-item expanded affix "><a href="foreword.html">Foreword</a></li><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">The essentials</li><li class="chapter-item expanded "><a href="chapter_1/introduction.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="chapter_1/runtimes.html"><strong aria-hidden="true">1.2.</strong> Runtimes</a></li><li class="chapter-item expanded "><a href="chapter_1/hello_world.html"><strong aria-hidden="true">1.3.</strong> Hello, World!</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_2/introduction.html"><strong aria-hidden="true">2.</strong> Basic Programming Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_2/types.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li class="chapter-item expanded "><a href="chapter_2/variables.html"><strong aria-hidden="true">2.2.</strong> Variables</a></li><li class="chapter-item expanded "><a href="chapter_2/functions.html"><strong aria-hidden="true">2.3.</strong> Functions</a></li><li class="chapter-item expanded "><a href="chapter_2/for.html"><strong aria-hidden="true">2.4.</strong> The for loop</a></li><li class="chapter-item expanded "><a href="chapter_2/while.html"><strong aria-hidden="true">2.5.</strong> The while loop</a></li><li class="chapter-item expanded "><a href="chapter_2/objects.html"><strong aria-hidden="true">2.6.</strong> Objects &amp; Lists</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_3/introduction.html"><strong aria-hidden="true">3.</strong> JavaScript in the wild</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_3/html.html"><strong aria-hidden="true">3.1.</strong> HTML &amp; the Web</a></li><li class="chapter-item expanded "><a href="chapter_3/dom.html"><strong aria-hidden="true">3.2.</strong> The DOM</a></li><li class="chapter-item expanded "><a href="chapter_3/interactions.html"><strong aria-hidden="true">3.3.</strong> Interactions</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Intermediate JavaScript</li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.</strong> Types, Objects, and Prototypes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.1.</strong> Objects</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.2.</strong> JSON</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.3.</strong> The prototype</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.4.</strong> Functions, reintroduced</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">4.5.</strong> Classes</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.</strong> Functional Programming</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.1.</strong> Programming paradigms</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.2.</strong> Functional paradigms</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.3.</strong> Closures &amp; Anonymous functions</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.4.</strong> Immutability</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.5.</strong> Map, Reduce, Filter</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">5.6.</strong> Composition &amp; Currying</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.</strong> Packages</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.1.</strong> Libraries</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.2.</strong> Imports &amp; require</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.3.</strong> NPM</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.4.</strong> NVM &amp; Javascript versioning</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">6.5.</strong> Common packages &amp; utilities</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Industry JavaScript</li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">7.</strong> TypeScript</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">8.</strong> Asynchronicity</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">9.</strong> Complex standard library functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">9.1.</strong> Filesystem access</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">9.2.</strong> Common packages &amp; utilities</a></li></ol></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">10.</strong> Project: Micron</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Codill</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#codill" id="codill">Codill</a></h1>
+<p><em>by Rishi Kothari</em></p>
+<p>This version of the Codill book—a readable course into JavaScript—assumes basic knowledge of programming (for 
+instance, what the terminal is and how to use a web browser).</p>
+<p>You may find the source code of this book on <a href="https://z.rishi.cx/g/codill">the Codill GitHub Repository</a>, and the 
+official mirror at <a href="https://codill.rishi.cx">codill.rishi.cx</a>.</p>
+<p>This book was written over the course of two months in 2021, with support from Nathan Couckuyt from Turner Fenton 
+Secondary School in Brampton, Ontario.</p>
+<h1><a class="header" href="#foreword" id="foreword">Foreword</a></h1>
+<p>The 1990s was a time of extreme change. Today, we look back on those days (even those of us that weren't born 
+then—like me!) with nostalgia. The remnants of the 90s can be seen just about everywhere today, from the tiny 
+smartphones in our pockets running SMS software and systems to Linux—which is in just about every piece of 
+technology out there.</p>
+<p>However, after one fateful 10 day period</p>
+<h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
+<p>Let's get you started with JavaScript! Your journey into web programming begins here.</p>
+<p>This chapter will go through the basics of installation, common tools in the JS ecosystem, runtimes, and some 
+initial programs to run to get you started with JavaScript!</p>
+<h1><a class="header" href="#installation" id="installation">Installation</a></h1>
+<p>For the majority of this book, we'll be using Node.js as our runtime, for a couple of reasons.</p>
+<p>Node is simple above all else. Instead of needing to learn HTML, CSS, and dozens of other web technologies to execute JS in your browser, you only need one command in the terminal. It's an excellent tool to learn the basics of programming as a whole!</p>
+<p>Node is also not a sandboxed environment; it has very few restrictions on the things that you can do with it, and even those can be bypassed. This also leaves some programs vulnerable to attack, which is why JS developers that use Node usually look through their external programs to see if they're insecure. All of this means that we can do many more things with Node than we would by sticking to the convention.</p>
+<p>Finally, Node uses a modified version of a browser JS runtime under the hood, so we can rest assured that the concepts and programs we write can be run just about anywhere. Node uses V8 (Google Chrome's JS runtime environment) under the hood, which is also why it's incredibly fast!</p>
+<p>To install Node, head over to <a href="https://nodejs.org/en/">the Node website</a> and click &quot;Install&quot;.</p>
+<p>When you've gone through all the instructions, make sure to run <code>node -v</code> in your terminal.</p>
+<p>If you get an error saying something like &quot;Unknown command: node,&quot; try reinstalling it and trying again.</p>
+<h1><a class="header" href="#runtimes" id="runtimes">Runtimes</a></h1>
+<p>Chances are, you've already interacted with JavaScript in some way, shape or form. As was stated in the
+<a href="chapter_1/../introduction.html">introduction</a>, JS is usually used in web programming; many websites use JavaScript to allow
+user interaction, rich updating, and so on. To run the JavaScript that developers write for their websites, your
+browser also includes what's known as a JavaScript <em>runtime</em> environment.</p>
+<p>A runtime environment is nothing more than a place that code can run. However, there are many moving parts to a runtime environment. These pieces of a given runtime change based on the language, but we will discuss that more extensively in <a href="chapter_1/">Chapter 6</a>. In essence, a runtime holds all the bits and pieces that you need to execute a program: standard libraries, an executor, and so forth. Don't worry if those words confuse you right now—it's perfectly normal.</p>
+<blockquote>
+<p>Each browser has their own proprietary JavaScript runtime environment:</p>
+<ul>
+<li>Google Chrome uses a runtime known as <strong>V8</strong>, which is written in C++ and open source.</li>
+<li>Mozilla Firefox executes Javascript through its <strong>SpiderMonkey</strong> environment</li>
+<li><strong>JavascriptCore</strong> is what Safari uses, and its adoption has influenced the way that JavaScript has been shaped through the ages.</li>
+<li>Before Microsoft Edge came, Internet Explorer used <strong>Chakra</strong>.</li>
+</ul>
+</blockquote>
+<p>Behind the fancy names, each of these 'runtimes' do the exact same thing in each browser: give JS programs a space to run.</p>
+<p>However, browsers are just one possible application of JS; as we investigated earlier, it can also be used to write things like servers, interact with your computer's file system, create blockchains, among thousands of other possibilities. Browsers can't do these things because they are sandboxed.</p>
+<blockquote>
+<p>In programming, 'sandboxing' is a colloquial term for isolating an environment. In real life, sand from a sandbox can get everywhere—you wouldn't want it getting on any of the playground equipment, would you? When you go to a website, the JS code that is run can be similarly damaging; if it is given access to, say, the file system, then who knows what developers could do with a simple link?</p>
+<p>In the same way that physical sandboxes are built away from other places, browser runtime environments are sandboxed (they restrict certain features) to make sure that the JS that is run can't do anything malicious.</p>
+</blockquote>
+<p>If we do need access to the full computing power of a machine, then we need to go lower. JavaScript can also be run in the terminal through runtimes like Node.js!</p>
+<p>For instance, you can't access the file system through a browser webpage because of security &amp; sandboxing. On the other hand, because Node.js is a lower level developer tool by nature and doesn't have restrictions, it allows JS code to use more functions.</p>
+<blockquote>
+<p>&quot;Low level&quot; in programming means the level of abstraction that something provides. For instance, JS can't directly interact with a computer's RAM because it is a <em>high level</em> language. Something like C or Rust, on the other hand, are lower level languages, and they <em>can</em>. Node is a lower level JavaScript runtime; it has more system privileges.</p>
+</blockquote>
+<h1><a class="header" href="#hello-world" id="hello-world">Hello, World!</a></h1>
+<p>Now that you've installed your JS runtime, we can finally get into learning the language!</p>
+<p>Before we do that, though, we need to go through some command line basics.</p>
+<h2><a class="header" href="#the-command-line" id="the-command-line">The command line</a></h2>
+<p>Unlike the fancy GUIs (graphic user interfaces) that browsers provide, terminals are fairly barebones. They consist of one screen, a scrolling piece of text, and a little place to input some text.</p>
+<p>Because terminals are so minimalist, they can also do a <em>lot</em> of things! They give developers complete control over their computers, which is also why they're the tool of choice when building lower level projects. GUIs are a higher level abstraction over the things that can be done in terminals.</p>
+<p>To run a command, click on your terminal window and run <code>$ node</code> without typing in the <code>$</code> (when you see code blocks that begin with <code>$</code>, the text after the dollar sign symbolizes the command that you should run) into the terminal, like so:</p>
+<p><img src="chapter_1/assets/terminal_node.png" alt="Node command in terminal" /></p>
+<p>When you press the 'Enter' key, the command that you typed into the terminal gets run, and you should see your screen update to something like this:</p>
+<p><img src="chapter_1/assets/run.png" alt="Run command" /></p>
+<p>Congratulations! You've run your very first command line program.</p>
+<p>Commands can also take in arguments to change their behaviour.</p>
+<p>For instance, running <code>$ echo</code> won't do anything, but the <code>echo</code> command takes in arguments. This command simply logs out a piece of text. Try running <code>$ echo hi</code>. Did the word 'hi' pop up on your screen? In this case, &quot;hi&quot; was the argument passed into <code>echo</code>.</p>
+<p>There are millions of commands out there to interact with, and each of them has their own usage semantics. This book will largely focus on the <code>node</code> and <code>npm</code> (we'll get to the latter a little later) commands, but feel free to experiment with anything you come across on your journey!</p>
+<h2><a class="header" href="#the-node-command" id="the-node-command">The <code>node</code> command</a></h2>
+<p>When you run <code>$ node</code>, something odd happens. You don't return to the normal line in your shell for input, you get entered into a kind of sub-terminal. This is what's known as a REPL; a Read, Evaluate, Print Loop. It's a common method of learning a language, and allows you to run single lines of a language for execution.</p>
+<p>Whenever a code block starts with a <code>&gt;</code> in this book, you should run the text after it in Node's REPL (you can access it anytime by running <code>$ node</code>).</p>
+<p>This REPL is also going to be the place that we run our first JavaScript program!</p>
+<p>Try running <code>&gt; console.log(&quot;hello&quot;)</code> in the REPL, like so:</p>
+<p><img src="chapter_1/assets/console_run.png" alt="Run a JS program in the REPL" /></p>
+<p>When you've run that, you should see &quot;hello&quot; pop up in your output!</p>
+<p>Give yourself a pat on the back—you're officially a JS developer. This single line of code is perfect idiomatic JavaScript, and Node's just executed it flawlessly!</p>
+<p>Don't worry about understanding this piece of code right now; all that you need to move forwards is the ability to open up a terminal and get to Node's REPL.</p>
+<h2><a class="header" href="#files-with-the-node-command" id="files-with-the-node-command">Files with the <code>node</code> command</a></h2>
+<p>Node wouldn't be very useful if it could only execute programs line by line with no ability to save. Luckily, you can execute JS programs in Node from files by passing in a parameter for the file's name.</p>
+<p>To try this out, run the following commands in your terminal:</p>
+<pre><code class="language-bash">$ cd ~
+$ touch index.js
+$ echo 'console.log(3)' &gt; index.js
+$ node index.js
+</code></pre>
+<p>The first line changes directories (the equivalent of clicking on a different folder in your file explorer) into what's known as your 'home' directory (the top level of your file tree).</p>
+<p>The second line creates a file named <code>index.js</code>, and the third simply puts the line of JS code <code>console.log(3)</code> into it, using the pipe operator.</p>
+<p>Finally, we pass the name of the local file into the <code>node</code> command to run it.</p>
+<blockquote>
+<p>Alternatively, you can use one of the many thousands of online code execution platforms out there. <a href="https://replit.com">Replit</a> is a popular online editor for running Node programs; if you don't want to go through the pain of constantly switching between directories, using their Node template can be a good shortcut.</p>
+</blockquote>
+<h2><a class="header" href="#quiz" id="quiz">Quiz!</a></h2>
+<p>Before moving on, make sure you can answer the following questions for yourself (answers are provided):</p>
+<details>
+  <summary>Q: What is the terminal, and why is it used in development more than GUIs?</summary>
+<p><strong>A:</strong> A terminal is a text-based system for interacting with a computer. Because the only possible interactions between a user and the terminal are through text, it's much easier to develop a program for the command line than it is to develop one with a GUI. As such, terminals have far more capabilities than regular GUI applications do; this flexibility means that developers can be more efficient in their work with the terminal.</p>
+</details>
+<details>
+  <summary>Q: What is a runtime in programming? What is V8?</summary>
+<p><strong>A:</strong> A runtime environment is simply a toolset that gives developers the ability to execute programs in a given language on their machine. V8 is the runtime that Google Chrome uses to execute JavaScript, and was adapted for the terminal by Node.</p>
+</details>
+<details>
+  <summary>Q: What is a REPL?</summary>
+<p><strong>A:</strong> REPL stands for Read, Evaluate, Print, Loop. It is a simple way of executing programs line-by-line (generating output each time a new line is created), and is a useful way of learning a new language.</p>
+</details>
+<h1><a class="header" href="#basic-programming-concepts" id="basic-programming-concepts">Basic Programming Concepts</a></h1>
+<h1><a class="header" href="#primitive-types" id="primitive-types">Primitive Types</a></h1>
+<h1><a class="header" href="#variables" id="variables">Variables</a></h1>
+<h1><a class="header" href="#functions" id="functions">Functions</a></h1>
+<h1><a class="header" href="#the-for-loop" id="the-for-loop">The for loop</a></h1>
+<h1><a class="header" href="#the-while-loop" id="the-while-loop">The while loop</a></h1>
+<h1><a class="header" href="#objects--lists" id="objects--lists">Objects &amp; Lists</a></h1>
+<h1><a class="header" href="#javascript-in-the-wild" id="javascript-in-the-wild">JavaScript in the wild</a></h1>
+<h1><a class="header" href="#html--the-web" id="html--the-web">HTML &amp; the Web</a></h1>
+<h1><a class="header" href="#the-dom" id="the-dom">The DOM</a></h1>
+<h1><a class="header" href="#interactions" id="interactions">Interactions</a></h1>
+<h1><a class="header" href="#project-micron" id="project-micron">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-1" id="project-micron-1">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-2" id="project-micron-2">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-3" id="project-micron-3">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-4" id="project-micron-4">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-5" id="project-micron-5">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-6" id="project-micron-6">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-7" id="project-micron-7">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-8" id="project-micron-8">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-9" id="project-micron-9">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-10" id="project-micron-10">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-11" id="project-micron-11">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-12" id="project-micron-12">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-13" id="project-micron-13">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-14" id="project-micron-14">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-15" id="project-micron-15">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-16" id="project-micron-16">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-17" id="project-micron-17">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-18" id="project-micron-18">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-19" id="project-micron-19">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-20" id="project-micron-20">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-21" id="project-micron-21">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-22" id="project-micron-22">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-23" id="project-micron-23">Project: Micron</a></h1>
+<h1><a class="header" href="#project-micron-24" id="project-micron-24">Project: Micron</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
