@@ -7,3 +7,6 @@ title = "Codill"
 
 [output.html.playground]
 editable = true
+
+[output.html]
+mathjax-support = true
