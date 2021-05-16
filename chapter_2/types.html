@@ -196,8 +196,202 @@
 <ul>
 <li>Addition/Subtraction with <code>+</code> and <code>-</code></li>
 <li>Multiplication/Division with <code>*</code> and <code>/</code></li>
-<li>Exponentiation with <code>**</code> (an equation like \( \int x dx = \frac{x^2}{2} + C \))</li>
+<li>Exponentiation with <code>**</code> (an equation like \( 2^5 \) might be represented by <code>2**5</code>)</li>
 </ul>
+<p>JavaScript operations also supported boosted operation precedence. By default, operations are right-associated, with precedence following from basic BEDMAS rules. For instance, if you wanted to evaluate an expression that looked something like: \( 20 - [3 \times (2 + 4)] \), you could run <code>&gt; 20 - (3 * (2 + 4))</code>.</p>
+<h2><a class="header" href="#strings" id="strings">Strings</a></h2>
+<p>Numbers are fun to use, but what if you wanted to represent something a little bit more complex, like a piece of text? This is where the <code>string</code> type comes in.</p>
+<p>Strings are just sequences of UTF-8 encoded characters stored in memory.</p>
+<blockquote>
+<p>UTF stands for Unicode Transformation Format, and is a simple form of representing text and characters using binary numbers. Computers have to store data in particular ways—we use 1s and 0s at the lowest level of computing, and using UTF-8 gives programmers an efficient way to encode characters into numbers for storage in memory.</p>
+</blockquote>
+<p>In JavaScript, strings can be defined by using 3 types of quotations: <code>'</code>, <code>&quot;</code>, and the backtick character (&quot;`&quot;).</p>
+<pre><code>&gt; &quot;Hello there!&quot;
+Hello there!
+&gt; 'Heyo.'
+Heyo.
+&gt; `Greetings, human!`
+Greetings, human!
+</code></pre>
+<p>Just like numbers, you can perform certain operations on strings.</p>
+<p>Adding two strings together using <code>+</code> is called string concatenation (usually shortened to concat), and joins two strings together:</p>
+<pre><code>&gt; 'hello' + ' ' + 'there'
+'hello there'
+</code></pre>
+<p>JavaScript is also a dynamic language, which means that its type safety rules aren't very strict. This means that you can also use other types of values in string operations! For instance, if we wanted to show the result of a numeric addition in JavaScript, we could write something like:</p>
+<pre><code>&gt; 'The result of 1 + 2 is: ' + (1 + 2)
+'The result of 1 + 2 is: 3'
+</code></pre>
+<blockquote>
+<p>The process of changing types in programming is known as type <em>casting</em> (or just casting for short). In the above code snippet, we first add 1 to 2, then cast the result to type <code>string</code>.</p>
+</blockquote>
+<p>It is here that we also start to discover some of the flaws of JavaScript. Dynamic typing gives us powerful ways to write concise programs, but the rules that govern types also become a bit odd. Let's see what happens if we remove the parenthesis from the code snippet above:</p>
+<pre><code>&gt; 'The result of 1 + 2 is: ' + 1 + 2
+'The result of 1 + 2 is: 12'
+</code></pre>
+<p>...what just happened? Instead of getting the result of 3 in the string, we get 12.</p>
+<p>This might seem weird at first glance, but think back to the section on Numbers in JavaScript. When evaluating expressions, JS will go from left to right—just like in math. The first thing that JS sees is: <code>'The result of 1 + 2 is: ' + 1</code>, and so it casts the number <code>1</code> to a string and adds it to the first string, then repeats the process for the second number.</p>
+<p>These kinds of errors are quite common when writing JavaScript, and it's always important to think programs through before getting flustered.</p>
+<p>Let's try doing some more interesting operations with numbers. What if we wanted to add a <code>string</code> that contains a number to a <code>number</code>?</p>
+<pre><code>&gt; 2 + '2'
+'22'
+</code></pre>
+<p>This illustrates another important part of JavaScript's type casting rules: you cannot cast down types. Strings are not guaranteed to be numbers, which is why instead of casting the string to a number and adding the two as <code>number</code> types, the <code>number</code> gets casted to a <code>string</code>, and the two get concatenated.</p>
+<p>A string's value might not always be a number, but a number can <em>always</em> be a string: numbers are just sequences of characters, after all.</p>
+<p>You can get a specific character of a string by adding square brackets with an index after a string:</p>
+<pre><code>&gt; 'hello there'[0]
+'h'
+&gt; 'hello there'[3]
+'l'
+&gt; 'hello there'[10]
+'e'
+</code></pre>
+<p>Strings are <em>zero-indexed</em>, which means that the first character has index 0. In the code snippet above, accessing the character at index 0 returns <code>'h'</code>, which is indeed the first character in the sequence.</p>
+<p>To get the length of a string, you can use the <code>.length</code> <em>property</em> of string types. Don't worry about what that means just yet—just think of it as an associated value of a given type. We'll be looking at properties a little bit more in <a href="/chapter_2/objects.html">Section 2.6 and further</a>.</p>
+<pre><code>&gt; 'hello there'.length
+11
+</code></pre>
+<p><code>.length</code> returns a value of type <code>number</code>, and we can use this to do some interesting calculations! Remember when I said that strings are zero-indexed? That means that the last character of the string will always be at the index of the length of the string minus one:</p>
+<pre><code>&gt; 'hello there'.length - 1
+10
+&gt; 'hello there'[10]
+'e'
+&gt; 'hello there'['hello there'.length - 1]
+'e'
+</code></pre>
+<p>If this seems a little bit repetitive, that's because it is. There are ways to get around this repetition called <em>variables</em>, but we'll be getting to that in the next section.</p>
+<p>To make strings lowercase, you can use their <code>.toLowerCase()</code> method (a type of property that's a function):</p>
+<pre><code>&gt; 'Hey There'.toLowerCase()
+'hey there'
+</code></pre>
+<p>There's also <code>.toUpperCase()</code>, which does exactly what you think it might do: it makes a string uppercased!</p>
+<pre><code>&gt; 'hello there'.toUpperCase()
+'HELLO THERE'
+</code></pre>
+<p>We can use <code>.replace(old, new)</code> to replace certain pieces of a string with others:</p>
+<pre><code>&gt; 'hello there'.replace('hello', 'hey')
+'hey there'
+</code></pre>
+<p>To search a string, we can use <code>.search(str)</code>, which returns the index of the given search query (and returns <code>-1</code> if it isn't found):</p>
+<pre><code>&gt; 'hello there'.search('h')
+0
+&gt; 'hello there'.search('ello')
+1
+&gt; 'hello there'.search('not found')
+-1
+&gt; 'hello there'.search('th')
+6
+</code></pre>
+<p>To get a subselection of a string, we can use <code>.slice(start, end)</code>, where <code>start</code> and <code>end</code> are indices of the given string. <code>start</code> is 0-indexed, while <code>end</code> is 1-indexed. To capture the string from a given index to the end, you can supply one parameter to <code>.slice</code> (just the first one):</p>
+<pre><code>&gt; 'hello there'.slice(0, 3)
+'hel'
+&gt; 'hello there'.slice(0, 5)
+'hello'
+&gt; 'hello there'.slice(3)
+'lo there'
+</code></pre>
+<p>We can repeat (or multiply) strings by using the <code>.repeat(n)</code> method:</p>
+<pre><code>&gt; 'hello there'.repeat(3)
+'hello therehello therehello there'
+</code></pre>
+<p>All functions that return the same type are chainable (which means that you can easily repeat them or run them sequentially):</p>
+<pre><code>&gt; 'hello there'.repeat(3).toUpperCase()
+'HELLO THEREHELLO THEREHELLO THERE'
+</code></pre>
+<h2><a class="header" href="#boolean" id="boolean">Boolean</a></h2>
+<p>Since computer programs deal in binary, what happens if we want to represent a value that's either true or false? This is where values of type <code>boolean</code> come in.</p>
+<p>There are two values that correspond to <code>boolean</code>s: <code>true</code> and <code>false</code>, which are <em>reserved keywords</em> in JS.</p>
+<blockquote>
+<p>A <em>reserved keyword</em> is just a word or a piece of text that the language uses for its own features. You can define keywords of your own using variables (which we'll see later), but certain words in the language (like <code>true</code> and <code>false</code>) are reserved by the language, and cannot be redefined.</p>
+</blockquote>
+<pre><code>&gt; true
+true
+&gt; false
+false
+</code></pre>
+<p>Pretty simple, right? Booleans are used primarily as ways to compare values. For instance, we can compare if two values are equal to each other using the <code>===</code> operator, which outputs a boolean:</p>
+<pre><code>&gt; 1 === 2
+false
+&gt; '1' === 1
+false
+</code></pre>
+<p>There are a whole host of other operators that we can use to compare values and output booleans.</p>
+<p>There are two equality operators in JS: <code>===</code> and <code>==</code> (we saw the former in the last code snippet). Fundamentally, they do the same thing: check if two values are equal. However, the operator with 3 equal signs also checks the <em>type</em> of the values that are being passed. <code>===</code> is aptly named the strict equality operator, and <code>==</code> is dubbed the loose equality operator:</p>
+<pre><code>&gt; '1' === 1
+false
+&gt; '1' == 1
+true
+</code></pre>
+<p>Similarly, we can check if two values are not equal to each other using the strict inequality check <code>!==</code> and the loose inequality operator <code>!=</code>:</p>
+<pre><code>&gt; 1 != 2
+true
+&gt; 1 != '2'
+true
+</code></pre>
+<p>We can also compare numbers using the <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code> and <code>&gt;=</code> operators, which correspond to 'greater than', 'less than', 'less than or equal to', and 'greater than or equal to' respectively:</p>
+<pre><code>&gt; 3 &gt; 2
+true
+&gt; 3 &gt;= 3
+true
+&gt; 1 &lt; 2
+true
+&gt; 2 &gt; 3
+false
+</code></pre>
+<p>We can also use the logical comparison operators <code>&amp;&amp;</code> and <code>||</code>, which are the AND and OR comparators respectively. We use these to compare between booleans:</p>
+<pre><code>&gt; true || false
+true
+&gt; true &amp;&amp; false
+false
+&gt; 3 &gt; 2 &amp;&amp; 1 &gt; 2
+false
+&gt; 3 &gt; 2 || 1 &gt; 2
+true
+</code></pre>
+<p>The negation operator <code>!</code> also exists:</p>
+<pre><code>&gt; !true
+false
+&gt; !false
+true
+&gt; !!false
+false
+</code></pre>
+<p>Other values can be implicitly casted to booleans as well. If a value can be casted to <code>true</code>, we call it <em>truthy</em>. If it casts to <code>false</code>, we call it <em>falsy</em>.</p>
+<p>Generally, values that represent nothing or 0 get casted to <code>false</code>, and values that <em>do</em> represent something get casted to <code>true</code>. To convert a value to a boolean, you can use double negation (<code>!!</code>) or the <code>Boolean(value)</code> function:</p>
+<pre><code>&gt; !!''
+false
+&gt; !!0
+false
+&gt; Boolean('')
+false
+&gt; Boolean(0)
+false
+&gt; Boolean(3230)
+true
+&gt; Boolean(' ')
+true
+</code></pre>
+<p>Don't worry if you can't remember all the type casting rules right now—as you use JS more and more, it'll just become second nature to you (and you'll build more efficient programs along with it).</p>
+<h2><a class="header" href="#null-and-undefined" id="null-and-undefined">Null and undefined</a></h2>
+<p>There are two other important reserved keywords that will pop up ofte when writing JavaScript: <code>null</code> and <code>undefined</code>, and they have the same underlying purpose: to represent nothing at all.</p>
+<p>Both are falsy, and they are equal to each other:</p>
+<pre><code>&gt; Boolean(undefined)
+false
+&gt; Boolean(null)
+false
+&gt; undefined == null
+true
+</code></pre>
+<p>While they might seem to be the exact same, there are some subtle differences. <code>null</code> represents literal nothingness: if you're instantiating a value, you can pass <code>null</code> as a primitive value. However, if something's been declared but hasn't been defined, <code>undefined</code> will be returned.</p>
+<p>The key difference between the two is that <code>null</code> is meant to be used as an actual value that you can pass around, and <code>undefined</code> just represents the abscence of a definition—you shouldn't use it manually in programs too often as a developer.</p>
+<h2><a class="header" href="#symbol" id="symbol">Symbol</a></h2>
+<p>The last of the primitive type is also one of the most interesting and complex. The <code>Symbol</code> type is meant to represent nothing more than a unique value; all things considered, this is also the one that will pop up the least in your daily development needs.</p>
+<pre><code>&gt; Symbol() === Symbol()
+false
+&gt; Symbol()
+Symbol()
+</code></pre>
+<p>These don't get used too often on their own, but when combined with things like arrays and objects, can be extremely useful when tracking entities. Don't worry if you don't completely understand this year—it's perfectly natural. Most professional JS devs go their whole careers barely using this primitive type.</p>
 
                     </main>
 
